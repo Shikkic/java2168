@@ -27,3 +27,13 @@ howmany++;
 1). Find every line or loop that uses zero marker and modify it and the condition using howmany. 
 
 2). modify (increase/decrease) howmany
+
+Assignment 3 
+-------------
+due 1/30
+
+Intcoll3
+
+public boolean belongs(int i){
+	return c[i];
+}
