@@ -1,0 +1,8 @@
+public interface Queue Interface <AnyType>{
+	public void enqueue(AnyType c);
+	public AnyType dequeue();
+	public AnyType getFront();
+	public boolean IsEmpty();
+}
+
+Very efficent way to store and remove, takes N constant time.
