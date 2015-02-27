@@ -39,7 +39,7 @@ public static void main(String[] args)
     else System.out.println("P not equal to Q"); 
     Intcoll61 A=new Intcoll61(); A.copy(P); 
     System.out.println("\nThe values in A are:");
-    A.omit(4);
+    A.omit(250);
     A.print("A.out"); A.print();
 }
 
@@ -142,7 +142,7 @@ public static void main(String[] args)
             pred.right = null;
         }
     }else if((p.left!=null)&&(p.right!=null)){
-        btNode child = p.left;
+        btNode child = p.right;
         btNode parent = p;
         if(pred == null){
             p.info = child.info;
