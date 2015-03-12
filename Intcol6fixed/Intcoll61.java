@@ -22,7 +22,7 @@ public static void main(String[] args)
     Intcoll61 P=new Intcoll61();
     Intcoll61 Q=new Intcoll61();
 
-    int value; Scanner keyboard=new Scanner(System.in);
+    /*int value; Scanner keyboard=new Scanner(System.in);
     System.out.println(
          "Enter a pos integer or neg integer to be inserted or 0 to quit:");
     value=keyboard.nextInt();
@@ -33,13 +33,35 @@ public static void main(String[] args)
          "Enter pos integer or neg integer to be inserted or 0 to quit:");
        value=keyboard.nextInt();
     }
+            */
+    P.insert(100);
+    P.insert(70);
+    P.insert(200);
+    P.insert(50);
+    P.insert(90);
+    P.insert(150);
+    P.insert(300);
+    P.insert(20);
+    P.insert(60);
+    P.insert(80);
+    P.insert(95);
+    P.insert(110);
+    P.insert(170);
+    P.insert(210);
+    P.insert(400);
+    P.insert(10);
+    P.insert(65);
+    P.insert(92);
+    P.insert(130);
+    P.insert(250);
+
     System.out.println("\nThe values in collection P are:");
     P.print("P.out");P.print(); Q.print("Q.out");
     if (P.equals(Q)) System.out.println("P equals Q");
     else System.out.println("P not equal to Q"); 
     Intcoll61 A=new Intcoll61(); A.copy(P); 
     System.out.println("\nThe values in A are:");
-    A.omit(250);
+    A.omit(70);
     A.print("A.out"); A.print();
 }
 
@@ -144,16 +166,27 @@ public static void main(String[] args)
     }else if((p.left!=null)&&(p.right!=null)){
         btNode child = p.right;
         btNode parent = p;
+        btNode pred2 = null;
         if(pred == null){
-            p.info = child.info;
-            parent.left = null;
-        }else{
-            while(child.right!=null){
-                parent = child;
-                child = child.right;
+            while(child.left!=null){
+                pred2 = child;
+                child = child.left;
             }
             p.info = child.info;
-            parent.right = child.left;
+            pred2.left = child.right;
+            //parent.left = p.left;
+        }else{
+            while(child.left!=null){
+                parent = child;
+                child = child.left;
+            }
+            if(parent == p){
+                p.info = child.info;
+                parent.right = null;
+            }else{
+                p.info = child.info;
+                parent.left = child.right;
+            }
         }
     }
    }
@@ -224,7 +257,18 @@ public static void main(String[] args)
       if (t!=null)
       {
           printtree(t.left);
-          System.out.println(t.info);
+          System.out.println(" ");
+          System.out.println("Node: "+t.info);
+          if(t.left != null){
+            System.out.println("Left child: "+t.left.info);
+          }else{
+            System.out.println("Left child is null!");
+          }
+          if(t.right != null){
+            System.out.println("Right child: "+t.right.info);
+          }else{
+            System.out.println("Right child is null!");
+          }
           printtree(t.right);
       }
    }
